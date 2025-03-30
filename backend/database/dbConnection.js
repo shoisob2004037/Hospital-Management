@@ -22,4 +22,5 @@ export const dbConnection = async () => {
     // Don't crash the application, but log the error
     return null;
   }
+  
 };
