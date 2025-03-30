@@ -22,7 +22,7 @@ const PatientProfile = () => {
     const fetchPatientProfile = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patient/me`,
           { withCredentials: true }
         );
         const user = data.user;
@@ -42,7 +42,7 @@ const PatientProfile = () => {
     const fetchPatientAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/patient",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/patient`,
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -67,7 +67,7 @@ const PatientProfile = () => {
     console.log("Sending update data:", updatedData);
     try {
       const response = await axios.patch(
-        "http://localhost:4000/api/v1/user/patient/update",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patient/update`,
         updatedData,
         {
           withCredentials: true,
@@ -79,7 +79,7 @@ const PatientProfile = () => {
       setPatient({ ...patient, ...updatedData });
       setEditMode(false);
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/patient/me",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patient/me`,
         { withCredentials: true }
       );
       setPatient(data.user);

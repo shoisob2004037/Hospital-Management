@@ -27,7 +27,7 @@ const App = () => {
   useEffect(() => {
     const fetchPatient = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/user/patient/me", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patient/me`, {
           withCredentials: true,
         });
         console.log("Patient Response:", response.data);
@@ -55,7 +55,7 @@ const App = () => {
   useEffect(() => {
     const fetchDoctor = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/doctor/me", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/me`, {
           withCredentials: true,
         });
         console.log("Doctor Response:", response.data);

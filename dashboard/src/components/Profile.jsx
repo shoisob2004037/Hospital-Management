@@ -13,7 +13,7 @@ const Profile = () => {
     const fetchAdmin = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/admin/me",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admin/me`,
           { withCredentials: true }
         );
         setAdmin(data.user); 

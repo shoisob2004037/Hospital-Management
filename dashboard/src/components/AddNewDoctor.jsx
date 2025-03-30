@@ -87,7 +87,7 @@ const AddNewDoctor = () => {
       });
 
       await axios
-        .post("http://localhost:4000/api/v1/user/doctor/addNew", formData, {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/doctor/addNew`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

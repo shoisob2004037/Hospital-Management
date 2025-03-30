@@ -26,7 +26,7 @@ const DoctorProfile = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/doctor/me", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/me`, {
           withCredentials: true,
         });
         console.log("Fetched Doctor Details:", response.data);
@@ -58,7 +58,7 @@ const DoctorProfile = () => {
     const fetchDoctorAppointments = async () => {
       setAppointmentsLoading(true);
       try {
-        const { data } = await axios.get("http://localhost:4000/api/v1/appointment/getall", {
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/getall`, {
           withCredentials: true,
         });
         console.log("Logged-in Doctor ID (from Context):", doctor?._id);
@@ -104,7 +104,7 @@ const DoctorProfile = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

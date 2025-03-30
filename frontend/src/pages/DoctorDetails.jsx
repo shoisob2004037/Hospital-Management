@@ -12,7 +12,7 @@ const DoctorDetails = () => {
     const fetchDoctorDetails = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4000/api/v1/user/doctor/${id}`, // Updated endpoint
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/doctor/${id}`, // Updated endpoint
           { withCredentials: true }
         );
         if (data.success) {

@@ -10,7 +10,7 @@ const AllUsers = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patients",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patients`,
           { withCredentials: true }
         );
         console.log("AllUsers response:", response.data); 

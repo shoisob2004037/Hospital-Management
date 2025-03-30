@@ -15,7 +15,7 @@ const Navbar = () => {
   // Patient Logout
   const handlePatientLogout = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/v1/user/patient/logout", {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patient/logout`, {
         withCredentials: true,
       });
       toast.success(res.data.message);
@@ -28,7 +28,7 @@ const Navbar = () => {
   // Doctor Logout
   const handleDoctorLogout = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/v1/doctor/logout", {
+      const res = await axios.get( `${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/logout`, {
         withCredentials: true,
       });
       toast.success(res.data.message);

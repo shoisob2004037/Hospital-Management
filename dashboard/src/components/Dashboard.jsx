@@ -22,7 +22,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getall",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/getall`,
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -38,7 +38,7 @@ const Dashboard = () => {
     const fetchAdmin = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/admin/me",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admin/me`,
           { withCredentials: true }
         );
         setAdminMe(data.user);
@@ -54,7 +54,7 @@ const Dashboard = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/doctors`,
           { withCredentials: true }
         );
         setDoctors(data.doctors);
@@ -70,7 +70,7 @@ const Dashboard = () => {
     const fetchUsers = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/patients",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patients`,
           { withCredentials: true }
         );
         setPatients(data.patients);
@@ -87,7 +87,7 @@ const Dashboard = () => {
     const fetchAdmins = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/admins",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admins`,
           { withCredentials: true }
         );
         setAdmins(data.admins);
@@ -104,7 +104,7 @@ const Dashboard = () => {
     const fetchDoctorRequests = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/doctor/requests",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/requests`,
           { withCredentials: true }
         );
         setDoctorRequests(data.doctorRequests);
@@ -120,7 +120,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );
@@ -142,8 +142,8 @@ const Dashboard = () => {
     try {
       const endpoint =
         status === "approved"
-          ? `http://localhost:4000/api/v1/doctor/request/approve/${doctorId}`
-          : `http://localhost:4000/api/v1/doctor/request/reject/${doctorId}`;
+          ? `${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/request/approve/${doctorId}`
+          : `${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/request/reject/${doctorId}`;
       const { data } = await axios.put(endpoint, {}, { withCredentials: true });
 
       setDoctorRequests((prevRequests) =>

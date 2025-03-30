@@ -10,7 +10,7 @@ const AllAdmins = () => {
     const fetchAdmins = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/admins",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admins`,
           { withCredentials: true }
         );
         setAdmins(response.data.admins);

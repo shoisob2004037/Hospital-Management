@@ -62,7 +62,7 @@ const RequestToJoin = () => {
       }
 
       await axios
-        .post("http://localhost:4000/api/v1/doctor/request-to-join", formData, {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/doctor/request-to-join`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

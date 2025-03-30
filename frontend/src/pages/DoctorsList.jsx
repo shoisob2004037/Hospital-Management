@@ -12,7 +12,7 @@ const DoctorsList = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/doctors`,
           { withCredentials: true }
         );
         if (data.success) {
