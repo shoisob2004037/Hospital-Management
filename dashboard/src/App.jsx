@@ -24,7 +24,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admin/me1`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admin/me`,
           { withCredentials: true }
         );
         setIsAuthenticated(true);
