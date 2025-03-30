@@ -45,7 +45,7 @@ const appointmentSchema = new mongoose.Schema({
   },
   appointment_time: {
     type: String,
-    required: [true, "Appointment Time Is Required!"],
+    required: [false, "Appointment Time Is Required!"],
   },
   department: {
     type: String,
