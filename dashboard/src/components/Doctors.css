@@ -1,0 +1,151 @@
+/* src/components/Doctors.css */
+
+.doctors-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.doctors-title {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.doctors-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.doctors-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctors-avatar {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+  border: 2px solid black;
+}
+
+.doctors-name {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.doctors-details {
+  margin-bottom: 15px;
+}
+
+.doctors-details p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.doctors-details p span {
+  color: #333;
+  font-weight: 500;
+}
+
+.doctors-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.doctors-delete-btn,
+.doctors-details-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.doctors-delete-btn {
+  background: #d9534f;
+  color: #fff;
+}
+
+.doctors-delete-btn:hover {
+  background: #c9302c;
+}
+
+.doctors-details-btn {
+  background: #007bff;
+  color: #fff;
+}
+
+.doctors-details-btn:hover {
+  background: #0056b3;
+}
+
+.doctors-no-found {
+  text-align: center;
+  color: #d9534f;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .doctors-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctors-page {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .doctors-title {
+    font-size: 2rem;
+  }
+
+  .doctors-card {
+    padding: 15px;
+  }
+
+  .doctors-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .doctors-name {
+    font-size: 1.3rem;
+  }
+
+  .doctors-details p {
+    font-size: 0.9rem;
+  }
+
+  .doctors-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .doctors-delete-btn,
+  .doctors-details-btn {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
