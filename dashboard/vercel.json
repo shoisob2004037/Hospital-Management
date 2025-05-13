@@ -1,0 +1,16 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://hospital-management-xi-six.vercel.app/api/$1",
+      "statusCode": 200
+    }
+  ]
+}
